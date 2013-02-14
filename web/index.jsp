@@ -88,12 +88,22 @@
             Width: <input type="text" name="width"><br>
             <input id="Submit" name="Submit" type="submit" value="Calculate">
         </form>
+        <%
+                if (request.getAttribute("rectangleAnswer") != null) {
+                    out.print(request.getAttribute("rectangleAnswer"));
+                }
+        %>
         <br>
         <h1>Circle Calculator</h1>
         <form id="calc2" name="calc2" method="POST" action="CircleController" onsubmit="return valCircle()">
             Radius: <input type="text" name="radius"><br>           
             <input id="Submit" name="Submit" type="submit" value="Calculate">
         </form>
+        <%
+                if (request.getAttribute("circleAnswer") != null) {
+                    out.print(request.getAttribute("circleAnswer"));
+                }
+        %>
         <br>
         <h1>Triangle Calculator</h1>
         <form id="calc3" name="calc3" method="POST" action="TriangleController" onsubmit="return valTriangle()">
@@ -101,5 +111,10 @@
             Side B: <input type="text" name="sideB"><br>
             <input id="Submit" name="Submit" type="submit" value="Calculate">
         </form>
+        <%
+                if (request.getAttribute("triangleAnswer") != null) {
+                    out.print(request.getAttribute("triangleAnswer"));
+                }
+        %>
     </body>
 </html>

@@ -20,7 +20,7 @@ import model.TriangleCalculator;
  */
 @WebServlet(name = "TriangleController", urlPatterns = {"/TriangleController"})
 public class TriangleController extends HttpServlet {
-private static final String RESULT_PAGE = "/page2.jsp";
+private static final String RESULT_PAGE = "/index.jsp";
 
     /**
      * Processes requests for both HTTP
@@ -85,7 +85,7 @@ private static final String RESULT_PAGE = "/page2.jsp";
         double sideB = Double.parseDouble(request.getParameter("sideB"));
         TriangleCalculator ca = new TriangleCalculator(sideA, sideB);
         
-        request.setAttribute("answer", ca.getArea());
+        request.setAttribute("triangleAnswer", ca.getArea());
         RequestDispatcher view =
                 request.getRequestDispatcher(RESULT_PAGE);
         view.forward(request, response);

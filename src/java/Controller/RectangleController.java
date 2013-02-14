@@ -22,7 +22,7 @@ import model.RectangleCalculator;
  */
 @WebServlet(name = "NewServlet1", urlPatterns = {"/NewServlet1"})
 public class RectangleController extends HttpServlet {
-private static final String RESULT_PAGE = "/page2.jsp";
+private static final String RESULT_PAGE = "/index.jsp";
     /**
      * Processes requests for both HTTP
      * <code>GET</code> and
@@ -42,7 +42,7 @@ private static final String RESULT_PAGE = "/page2.jsp";
         RectangleCalculator ca = new RectangleCalculator(l, w);
         double result = ca.getArea();
 
-        request.setAttribute("answer", result);
+        request.setAttribute("rectangleAnswer", result);
       
         RequestDispatcher view =
                 request.getRequestDispatcher(RESULT_PAGE);
